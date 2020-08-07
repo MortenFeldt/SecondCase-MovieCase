@@ -2,7 +2,7 @@ package controller;
 
 /**
  *
- * @author Morten
+ * @author Morten Feldt
  */
 public class Controller {
 
