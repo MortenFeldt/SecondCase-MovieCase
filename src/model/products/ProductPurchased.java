@@ -7,7 +7,7 @@ import java.util.List;
  * @author Morten Feldt
  */
 
-public class ProductPurchased extends Product{
+public class ProductPurchased extends Product implements Comparable<ProductPurchased>{
     
     private int purchasedcount;
 
@@ -31,6 +31,11 @@ public class ProductPurchased extends Product{
     
     public void countUpPurchasedCount(){
         this.purchasedcount += 1;
+    }
+
+    @Override
+    public int compareTo(ProductPurchased o) {
+        return o.getPurchasedcount() - this.purchasedcount;
     }
 
 }

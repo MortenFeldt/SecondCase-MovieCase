@@ -8,15 +8,15 @@ import java.util.List;
  * @author Morten Feldt
  */
 
-public class ProductsPurchaed {
+public class ProductsPurchased{
 
     private List<ProductPurchased> productsPurchaed;
 
-    public ProductsPurchaed() {
+    public ProductsPurchased() {
         this.productsPurchaed = new ArrayList();
     }
     
-    public ProductsPurchaed(List<ProductPurchased> productsPurchaed) {
+    public ProductsPurchased(List<ProductPurchased> productsPurchaed) {
         this.productsPurchaed = productsPurchaed;
     }
 
