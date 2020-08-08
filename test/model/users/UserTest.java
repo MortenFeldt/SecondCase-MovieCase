@@ -38,7 +38,8 @@ public class UserTest {
         String userName = "Morten Feldt";
         User userTest = new User(userName);
         String expected = "Morten Feldt";
-        assertEquals(expected, userTest.getName());
+        String actual = userTest.getName();
+        assertEquals(expected, actual);
     }
     
     @Test
@@ -48,7 +49,8 @@ public class UserTest {
         String newUserName = "Morten Feldt Test";
         userTest.setName(newUserName);
         String expected = "Morten Feldt Test";
-        assertEquals(expected, userTest.getName());
+        String actual = userTest.getName();
+        assertEquals(expected, actual);
     }
     
     @Test
@@ -56,7 +58,8 @@ public class UserTest {
         String userName = "Morten Feldt";
         User userTest = new User(userName, userProductViewed, null);
         int expected = 1;
-        assertEquals(expected, userTest.getViewed().size());
+        int actual = userTest.getViewed().size();
+        assertEquals(expected, actual);
     }
     
     @Test
@@ -65,7 +68,8 @@ public class UserTest {
         User userTest = new User(userName);
         userTest.setViewed(userProductViewed);
         int expected = 1;
-        assertEquals(expected, userTest.getViewed().size());
+        int actual = userTest.getViewed().size();
+        assertEquals(expected, actual);
     }
     
     @Test
@@ -73,7 +77,8 @@ public class UserTest {
         String userName = "Morten Feldt";
         User userTest = new User(userName, null, userProductPurchased);
         int expected = 1;
-        assertEquals(expected, userTest.getPurchased().size());
+        int actual = userTest.getPurchased().size();
+        assertEquals(expected, actual);
     }
     
     @Test
@@ -82,7 +87,8 @@ public class UserTest {
         User userTest = new User(userName);
         userTest.setPurchased(userProductPurchased);
         int expected = 1;
-        assertEquals(expected, userTest.getPurchased().size());
+        int actual = userTest.getPurchased().size();
+        assertEquals(expected, actual);
     }
     
     @Test
@@ -91,7 +97,8 @@ public class UserTest {
         User userTest = new User(userName, userProductViewed, null);
         userTest.addViewed(productTest);
         int expected = 2;
-        assertEquals(expected, userTest.getViewed().size());
+        int actual = userTest.getViewed().size();
+        assertEquals(expected, actual);
     }
     
     @Test
@@ -100,7 +107,8 @@ public class UserTest {
         User userTest = new User(userName, null, userProductPurchased);
         userTest.addPurchased(productTest);
         int expected = 2;
-        assertEquals(expected, userTest.getPurchased().size());
+        int actual = userTest.getPurchased().size();
+        assertEquals(expected, actual);
     }
     
 }
