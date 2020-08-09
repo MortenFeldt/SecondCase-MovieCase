@@ -4,8 +4,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
- * @author Morten
+ * Test class to test functionality about User class object
+ * @author Morten Feldt
  */
 public class UsersTest {
     

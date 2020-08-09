@@ -35,7 +35,7 @@ public class ProductPurchased extends Product implements Comparable<ProductPurch
 
     @Override
     public int compareTo(ProductPurchased o) {
-        return o.getPurchasedcount() - this.purchasedcount;
+        return o.getPurchasedcount() - purchasedcount;
     }
 
 }
