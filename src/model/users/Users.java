@@ -1,7 +1,9 @@
 package model.users;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Class to hold list of User objects
@@ -10,26 +12,26 @@ import java.util.List;
 
 public class Users {
     
-    private List<User> users;
+    private Map<Integer, User> users;
 
     public Users() {
-        this.users = new ArrayList();
+        this.users = new HashMap();
     }
 
-    public Users(List<User> users) {
+    public Users(Map<Integer, User> users) {
         this.users = users;
     }
 
-    public List<User> getUsers() {
+    public Map<Integer, User> getUsers() {
         return users;
     }
 
-    public void setUsers(List<User> users) {
+    public void setUsers(Map<Integer, User> users) {
         this.users = users;
     }
     
     public void addUser(User u){
-        users.add(u);
+        users.put(u.getId(), u);
     }
 
 }

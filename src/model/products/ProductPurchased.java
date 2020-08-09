@@ -11,13 +11,13 @@ public class ProductPurchased extends Product implements Comparable<ProductPurch
     
     private int purchasedcount;
 
-    public ProductPurchased(String name, int rating, double price, int purchasedcount) {
-        super(name, rating, price);
+    public ProductPurchased(int id, String name, int year, double rating, double price, int purchasedcount) {
+        super(id, name, year, rating, price);
         this.purchasedcount = purchasedcount;
     }
 
-    public ProductPurchased(String name, List<String> genre, int rating, double price, int purchasedcount) {
-        super(name, genre, rating, price);
+    public ProductPurchased(int id, String name, int year, List<String> genre, double rating, double price, int purchasedcount) {
+        super(id, name, year, genre, rating, price);
         this.purchasedcount = purchasedcount;
     }
 

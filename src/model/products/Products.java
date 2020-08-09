@@ -1,7 +1,9 @@
 package model.products;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Class to hold list of Product objects
@@ -10,26 +12,26 @@ import java.util.List;
 
 public class Products {
 
-    private List<Product> products;
+    private Map<Integer, Product> products;
 
     public Products() {
-        this.products = new ArrayList();
+        this.products = new HashMap();
     }
 
-    public Products(List<Product> products) {
+    public Products(Map<Integer, Product> products) {
         this.products = products;
     }
 
-    public List<Product> getProducts() {
+    public Map<Integer, Product> getProducts() {
         return products;
     }
 
-    public void setProducts(List<Product> products) {
+    public void setProducts(Map<Integer, Product> products) {
         this.products = products;
     }
     
     public void addProduct(Product p){
-        products.add(p);
+        products.put(p.getId(), p);
     }
     
 }

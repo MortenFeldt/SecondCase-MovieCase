@@ -11,20 +11,31 @@ import model.products.Product;
 
 public class User {
     
+    private int id;
     private String name;
     private List<Product> viewed;
     private List<Product> purchased;
 
-    public User(String name) {
+    public User(int id, String name) {
+        this.id = id;
         this.name = name;
         this.viewed = new ArrayList();
         this.purchased = new ArrayList();
     }
 
-    public User(String name, List<Product> viewed, List<Product> purchased) {
+    public User(int id, String name, List<Product> viewed, List<Product> purchased) {
+        this.id = id;
         this.name = name;
         this.viewed = viewed;
         this.purchased = purchased;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
