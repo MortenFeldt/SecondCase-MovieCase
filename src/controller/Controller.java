@@ -8,7 +8,6 @@ import model.logic.RecommendationsToUser;
 import model.products.Product;
 import model.products.ProductPurchased;
 import model.products.Products;
-import model.products.Recommendations;
 import model.users.User;
 import model.users.UserSession;
 import model.users.UserSessions;
@@ -48,7 +47,7 @@ public class Controller {
             } else {
                 if(userSessions.getUserSessions().containsKey(Integer.parseInt(input))){
                     Product product = userSessions.getUserSessions().get(Integer.parseInt(input));
-                    System.out.println(product.getName());
+                    console.showRecommendationsForUser(recommendationsToUser.getTop3Recommendations(product, products));
                 } else {
                     //Error handling user id not found!
                 }

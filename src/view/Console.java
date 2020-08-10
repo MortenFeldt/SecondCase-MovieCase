@@ -34,9 +34,9 @@ public class Console {
         }
     }
     
-    public void showRecommendationsForUser(List<Product> products){
+    public void showRecommendationsForUser(List<ProductPurchased> products){
         System.out.println("**********Exercise 2: Recommendations**********");
-        for (Product product : products) {
+        for (ProductPurchased product : products) {
             System.out.println("ID: " + product.getId() + " - " + "Name: " + product.getName() + " - " + "Year: " + product.getYear());
         }
     }
