@@ -2,14 +2,10 @@ package controller;
 
 import java.io.FileNotFoundException;
 import model.File.FileFacadeImpl;
-import model.interfaces.FileFacade;
 import model.logic.RecentPopularProducts;
 import model.logic.RecommendationsToUser;
 import model.products.Product;
-import model.products.ProductPurchased;
 import model.products.Products;
-import model.users.User;
-import model.users.UserSession;
 import model.users.UserSessions;
 import model.users.Users;
 import view.Console;

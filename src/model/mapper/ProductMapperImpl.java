@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import model.interfaces.ProductMapper;
 import model.products.Product;
 import model.products.Products;
-import model.users.Users;
 
 /**
  * Mapper to use for data conversion from files to User objects

@@ -2,7 +2,6 @@ package model.interfaces;
 
 import model.products.Product;
 import model.products.Products;
-import model.users.User;
 
 /**
  *

@@ -7,9 +7,6 @@ import java.util.stream.Collectors;
 import model.products.Product;
 import model.products.ProductPurchased;
 import model.products.Products;
-import model.products.ProductsPurchased;
-import model.users.User;
-import model.users.Users;
 
 /**
  * Class used for methods to find a list with Recommendations Products to a user

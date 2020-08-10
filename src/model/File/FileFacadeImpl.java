@@ -5,7 +5,6 @@ import model.interfaces.FileFacade;
 import model.mapper.ProductMapperImpl;
 import model.mapper.UserMapperImpl;
 import model.mapper.UserSessionMapperImpl;
-import model.products.Product;
 import model.products.Products;
 import model.users.UserSessions;
 import model.users.Users;

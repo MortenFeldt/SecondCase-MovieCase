@@ -1,8 +1,6 @@
 package model.mapper;
 
-import java.util.ArrayList;
 import model.interfaces.UserMapper;
-import model.products.Product;
 import model.products.Products;
 import model.users.User;
 import model.users.Users;
