@@ -11,9 +11,10 @@ import org.junit.Before;
  * @author Morten Feldt
  */
 public class ProductsPurchasedTest {
-    
+    private int productId = 0;
     private String productName = "";
-    private int productRating = 0;
+    private int productYear = 0;
+    private double productRating = 0.0;
     private double productPrice = 0.0;
     private ArrayList<String> productGenre = new ArrayList();
     private ArrayList<ProductPurchased> productsPurchased = new ArrayList();
@@ -21,14 +22,16 @@ public class ProductsPurchasedTest {
     
     @Before
     public void init(){
+        productId = 123;
         productName = "Test Product 1";
-        productRating = 1;
+        productYear = 2010;
+        productRating = 1.1;
         productPrice = 134.95;
         productGenre.add("Action");
         productGenre.add("Thrillre");
         productGenre.add("Comedy"); 
         productPurchased = 23;
-        ProductPurchased productTest = new ProductPurchased(productName, productGenre, productRating, productPrice, productPurchased);
+        ProductPurchased productTest = new ProductPurchased(productId, productName, productYear, productGenre, productRating, productPrice, productPurchased);
         productsPurchased.add(productTest);
     }
     
@@ -52,7 +55,7 @@ public class ProductsPurchasedTest {
     @Test
     public void testAddToProductsPurchasedList(){
         ProductsPurchased productsTest = new ProductsPurchased(productsPurchased);
-        ProductPurchased productTestNew = new ProductPurchased(productName, productGenre, productRating, productPrice, productPurchased);
+        ProductPurchased productTestNew = new ProductPurchased(productId, productName, productYear, productGenre, productRating, productPrice, productPurchased);
         productsTest.addProductPurchaed(productTestNew);
         int expected = 2;
         int actual = productsTest.getProductsPurchaed().size();
@@ -62,7 +65,7 @@ public class ProductsPurchasedTest {
     @Test
     public void testSortProductsPurchasedList(){
         int productPurchasedNew = 50;
-        ProductPurchased productTestNew = new ProductPurchased(productName, productGenre, productRating, productPrice, productPurchasedNew);
+        ProductPurchased productTestNew = new ProductPurchased(productId, productName, productYear, productGenre, productRating, productPrice, productPurchasedNew);
         productsPurchased.add(productTestNew);
         ProductsPurchased productsTest = new ProductsPurchased(productsPurchased);
         Collections.sort(productsPurchased);

@@ -10,17 +10,20 @@ import org.junit.Before;
  * @author Morten Feldt
  */
 public class ProductPurchasedTest {
-    
+    private int productId = 0;
     private String productName = "";
-    private int productRating = 0;
+    private int productYear = 0;
+    private double productRating = 0.0;
     private double productPrice = 0.0;
     private ArrayList<String> productGenre = new ArrayList();
     private int productPurchased;
     
     @Before
     public void init(){
+        productId = 123;
         productName = "Test Product 1";
-        productRating = 1;
+        productYear = 2010;
+        productRating = 1.1;
         productPrice = 134.95;
         productGenre.add("Action");
         productGenre.add("Thrillre");
@@ -30,7 +33,7 @@ public class ProductPurchasedTest {
     
     @Test
     public void testGetPurchasedCount(){
-        ProductPurchased productPurchasedTest = new ProductPurchased(productName, productGenre, productRating, productPrice, productPurchased);
+        ProductPurchased productPurchasedTest = new ProductPurchased(productId, productName, productYear, productGenre, productRating, productPrice, productPurchased);
         int expected = 23;
         int actual = productPurchasedTest.getPurchasedcount();
         assertEquals(expected, actual);
@@ -38,7 +41,7 @@ public class ProductPurchasedTest {
     
     @Test
     public void testSetPurchasedCount(){
-        ProductPurchased productPurchasedTest = new ProductPurchased(productName, productGenre, productRating, productPrice, productPurchased);
+        ProductPurchased productPurchasedTest = new ProductPurchased(productId, productName, productYear, productGenre, productRating, productPrice, productPurchased);
         int newPurchasedCount = 50;
         productPurchasedTest.setPurchasedcount(newPurchasedCount);
         int expected = 50;
@@ -48,7 +51,7 @@ public class ProductPurchasedTest {
     
     @Test
     public void testCountUpPurchased(){
-        ProductPurchased productPurchasedTest = new ProductPurchased(productName, productGenre, productRating, productPrice, productPurchased);
+        ProductPurchased productPurchasedTest = new ProductPurchased(productId, productName, productYear, productGenre, productRating, productPrice, productPurchased);
         productPurchasedTest.countUpPurchasedCount();
         int expected = 24;
         int actual = productPurchasedTest.getPurchasedcount();
