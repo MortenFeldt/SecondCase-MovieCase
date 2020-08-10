@@ -1,5 +1,6 @@
 package model.users;
 
+import java.util.HashMap;
 import java.util.Map;
 import model.products.Product;
 
@@ -8,14 +9,15 @@ import model.products.Product;
  * @author Morten Feldt
  */
 
-public class UsersSession {
+public class UserSessions {
     
     private Map<Integer, Product> userSessions;
 
-    public UsersSession() {
+    public UserSessions() {
+        userSessions = new HashMap();
     }
 
-    public UsersSession(Map<Integer, Product> userSessions) {
+    public UserSessions(Map<Integer, Product> userSessions) {
         this.userSessions = userSessions;
     }
 

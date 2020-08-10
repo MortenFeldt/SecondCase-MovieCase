@@ -4,8 +4,10 @@ import java.io.FileNotFoundException;
 import model.interfaces.FileFacade;
 import model.mapper.ProductMapperImpl;
 import model.mapper.UserMapperImpl;
+import model.mapper.UserSessionMapperImpl;
 import model.products.Product;
 import model.products.Products;
+import model.users.UserSessions;
 import model.users.Users;
 
 /**
@@ -17,6 +19,7 @@ public class FileFacadeImpl implements FileFacade{
     
     ProductMapperImpl productMapper = new ProductMapperImpl();
     UserMapperImpl userMapper = new UserMapperImpl();
+    UserSessionMapperImpl userSessionMapper = new UserSessionMapperImpl();
     
     @Override
     public String getFileType(String filename) {
@@ -50,6 +53,20 @@ public class FileFacadeImpl implements FileFacade{
             }
         }
         return users;
+    }
+
+    @Override
+    public UserSessions getUserSessionDataFromFile(String filename, Users users, Products products) throws FileNotFoundException {
+        UserSessions userSessions  = null;
+        if(getFileType(filename).equalsIgnoreCase("txt")){
+            txtFileReader fileReader = new txtFileReader();
+            try {
+                userSessions = userSessionMapper.getUserSessionFromContent(fileReader.readFromFile(filename), users, products);
+            } catch (FileNotFoundException ex) {
+                throw new FileNotFoundException("Problem with file. Try again!");
+            }
+        }
+        return userSessions;
     }
     
 }

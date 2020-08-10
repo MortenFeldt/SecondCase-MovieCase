@@ -10,6 +10,8 @@ import model.products.ProductPurchased;
 import model.products.Products;
 import model.products.Recommendations;
 import model.users.User;
+import model.users.UserSession;
+import model.users.UserSessions;
 import model.users.Users;
 import view.Console;
 
@@ -22,6 +24,7 @@ public class Controller {
     public static void main(String[] args) throws FileNotFoundException {
         final String FILE_PRODUCT = "Products.txt";
         final String FILE_USERS = "Users.txt";
+        final String FILE_USER_SESSION = "CurrentUserSession.txt";
         
         Console console = new Console();
         FileFacadeImpl fileFacadeImpl = new FileFacadeImpl();
@@ -30,6 +33,7 @@ public class Controller {
         
         Products products = fileFacadeImpl.getProductDataFromFile(FILE_PRODUCT);      
         Users users = fileFacadeImpl.getUserDataFromFile(FILE_USERS, products);
+        UserSessions userSessions = fileFacadeImpl.getUserSessionDataFromFile(FILE_USER_SESSION, users, products);
         
         String input = "";
         
@@ -42,6 +46,12 @@ public class Controller {
             if(input.equals("0")){
                 System.exit(0);
             } else {
+                if(userSessions.getUserSessions().containsKey(Integer.parseInt(input))){
+                    Product product = userSessions.getUserSessions().get(Integer.parseInt(input));
+                    System.out.println(product.getName());
+                } else {
+                    //Error handling user id not found!
+                }
                 //User input to detect user id and other methods to recommendations
                 //console.showRecommendationsForUser(products);
             }
