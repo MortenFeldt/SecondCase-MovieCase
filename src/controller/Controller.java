@@ -16,7 +16,7 @@ import view.Console;
  */
 public class Controller {
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
         final String FILE_PRODUCT = "Products.txt";
         final String FILE_USERS = "Users.txt";
         final String FILE_USER_SESSION = "CurrentUserSession.txt";
@@ -26,9 +26,19 @@ public class Controller {
         RecentPopularProducts recentPopularProducts = new RecentPopularProducts();
         RecommendationsToUser recommendationsToUser = new RecommendationsToUser();
         
-        Products products = fileFacadeImpl.getProductDataFromFile(FILE_PRODUCT);      
-        Users users = fileFacadeImpl.getUserDataFromFile(FILE_USERS, products);
-        UserSessions userSessions = fileFacadeImpl.getUserSessionDataFromFile(FILE_USER_SESSION, users, products);
+        Products products = null;
+        Users users = null;
+        UserSessions userSessions = null;
+        
+        try{
+            products = fileFacadeImpl.getProductDataFromFile(FILE_PRODUCT);      
+            users = fileFacadeImpl.getUserDataFromFile(FILE_USERS, products);
+            userSessions = fileFacadeImpl.getUserSessionDataFromFile(FILE_USER_SESSION, users, products);
+        } catch (FileNotFoundException ex){
+            console.fileNotfoundErrorMessage(ex.getMessage());
+            System.exit(0);
+        }
+        
         
         String input = "";
         
@@ -45,10 +55,8 @@ public class Controller {
                     Product product = userSessions.getUserSessions().get(Integer.parseInt(input));
                     console.showRecommendationsForUser(recommendationsToUser.getTop3Recommendations(product, products));
                 } else {
-                    //Error handling user id not found!
+                    console.userNotfoundErrorMessage();
                 }
-                //User input to detect user id and other methods to recommendations
-                //console.showRecommendationsForUser(products);
             }
         }
     }

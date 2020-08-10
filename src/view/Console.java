@@ -37,5 +37,13 @@ public class Console {
             System.out.println("ID: " + product.getId() + " - " + "Name: " + product.getName() + " - " + "Year: " + product.getYear());
         }
     }
+    
+    public void fileNotfoundErrorMessage(String message){
+        System.err.println(message);
+    }
+    
+    public void userNotfoundErrorMessage(){
+        System.err.println("User id could not be found!");
+    }
 
 }
