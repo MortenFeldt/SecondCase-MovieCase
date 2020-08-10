@@ -15,9 +15,12 @@ import model.users.Users;
 public class Controller {
 
     public static void main(String[] args) throws FileNotFoundException {
+        final String FILE_PRODUCT = "Products.txt";
+        final String FILE_USERS = "Users.txt";
+        
         FileFacadeImpl fileFacadeImpl = new FileFacadeImpl();
         
-        Products products = fileFacadeImpl.getProductDataFromFile("Products.txt");
+        Products products = fileFacadeImpl.getProductDataFromFile(FILE_PRODUCT);
         
         for (Product product : products.getProducts().values()) {
             System.out.println("*************************************");
@@ -25,7 +28,7 @@ public class Controller {
             System.out.println("*************************************");
         }
         
-        Users users = fileFacadeImpl.getUserDataFromFile("Users.txt", products);
+        Users users = fileFacadeImpl.getUserDataFromFile(FILE_USERS, products);
         
         for (User user : users.getUsers().values()) {
             System.out.println("*************************************");
