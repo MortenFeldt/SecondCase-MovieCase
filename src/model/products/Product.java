@@ -86,5 +86,25 @@ public class Product {
     public void addGenre(String newGenre){
         genre.add(newGenre);
     }
+    
+    @Override
+    public boolean equals(Object o) 
+    { 
+        Product p; 
+        if(!(o instanceof Product)) 
+        { 
+            return false; 
+        } 
+          
+        else
+        { 
+            p=(Product)o; 
+            if(this.id == p.getId()) 
+            { 
+                return true; 
+            } 
+        } 
+        return false; 
+    }
 
 }

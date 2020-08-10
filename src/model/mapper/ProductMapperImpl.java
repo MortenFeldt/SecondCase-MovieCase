@@ -28,7 +28,9 @@ public class ProductMapperImpl implements ProductMapper{
         String[] arrContentLine = contentLine.split(",");
         ArrayList<String> genre = new ArrayList();
         for (int j = 3; j < 8; j++) {
-            genre.add(arrContentLine[j]);
+            if(!arrContentLine[j].trim().equals("")){
+                genre.add(arrContentLine[j]);
+            }
         }
         return new Product(
                 Integer.parseInt(arrContentLine[0]), 
