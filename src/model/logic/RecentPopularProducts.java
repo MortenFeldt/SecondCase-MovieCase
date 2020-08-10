@@ -27,7 +27,6 @@ public class RecentPopularProducts {
         ProductsPurchased productsPurchased = new ProductsPurchased();
         
         for (Product product : productsCollection) {
-            //Collections.frequency(list, new Student("Ram", 19))
             int count = Collections.frequency(productsCollection, new Product(product.getId(), product.getName(), product.getYear(), product.getRating(), product.getPrice()));
             ProductPurchased productPurchased = new ProductPurchased(product.getId(), product.getName(), product.getYear(), product.getGenre(), product.getRating(), product.getPrice(), count);
             if(!(productsPurchased.getProductsPurchaed().contains(productPurchased))){
